@@ -20,7 +20,6 @@ function App() {
     // toDo는 새로운 input의 값
     // ...currentArray 는 currentArray라는 배열에 존재하는 요소들이 그대로 오는 것을 의미
   };
-  console.log(toDos);
   return (
     <div>
       <h1>My To Dos ({toDos.length})</h1>
@@ -33,6 +32,12 @@ function App() {
         />
         <button>Add To Do</button>
       </form>
+      <hr />
+      <ul>
+        {toDos.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
