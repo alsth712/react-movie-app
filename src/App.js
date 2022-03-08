@@ -2,43 +2,44 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [coins, setCoins] = useState([]);
-  const [myBudget, setMyBudget] = useState();
+  const [movies, setMovies] = useState([]);
+  // async-await 를 then보다 많이 사용하므로, async-await을 사용하기 위해서 getMovies 라는 함수를 만들어줄 것
+  const getMovies = async () => {
+    const json = await (
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.5&sort_by=year`
+      )
+    ).json();
+    setMovies(json.data.movies);
+    setLoading(false);
+  };
   useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers")
-      .then((response) => response.json())
-      .then((json) => {
-        setCoins(json); // json(=즉, coin) 정보를 얻었을 때 json의 값을 setCoins
-        setLoading(false); // 로딩이 전부 되었으므로
-      });
+    getMovies();
   }, []);
-  const onChange = (event) => setMyBudget(event.target.value);
   return (
     <div>
-      <h1>The Coins! {loading ? "" : `(${coins.length})`}</h1>
-      $
-      <input
-        type="number"
-        value={myBudget}
-        onChange={onChange}
-        placeholder="Write your budget in USD"
-      />
-      <br />
       {loading ? (
-        <strong>Loading...</strong>
+        <h1>Loading...⏰</h1>
       ) : (
-        <select>
-          {coins.map((coin) => (
-            <option>
-              {coin.name} ({coin.symbol}) : ${coin.quotes.USD.price} USD
-              {myBudget
-                ? `   | 💰 Your Budget : ${myBudget / coin.quotes.USD.price} ${
-                    coin.name
-                  } 💰`
-                : ""}
-            </option>
+        <div>
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <img src={movie.medium_cover_image} />
+              <h2>{movie.title}</h2>
+              <h5>
+                year : {movie.year} / rating : ⭐{movie.rating}
+              </h5>
+              <p>{movie.summary}</p>
+              {movie.hasOwnProperty("genres") ? (
+                <ul>
+                  {movie.genres.map((g) => (
+                    <li key={g}>{g}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
           ))}
-        </select>
+        </div>
       )}
     </div>
   );
