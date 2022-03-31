@@ -1,0 +1,23 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.LoadBox {
+  width: 200px;
+  height: 200px;
+  border: 30px solid;
+  border-color: #e50914 rgba(148, 148, 148, 0.5) rgba(148, 148, 148, 0.5)
+    /*transparent*/;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  text-align: center;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
