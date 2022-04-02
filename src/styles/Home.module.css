@@ -1,0 +1,27 @@
+html {
+  background-image: linear-gradient(to right, #aaaaaa 0%, #1e1e20 100%);
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
+  grid-gap: 150px;
+  padding: 50px;
+  width: 90%;
+  padding-top: 70px;
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 1090px) {
+  .movies {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
