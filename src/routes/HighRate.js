@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Loading from "../components/Load";
 import Movie from "../components/Movie";
+import styles from "../styles/Home.module.css";
 
 function HighRate({ rate }) {
   // state
@@ -22,11 +23,11 @@ function HighRate({ rate }) {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
         <Loading />
       ) : (
-        <div className={`${rate} rate`}>
+        <div className={styles.movies}>
           {movies.map((movie) => (
             <Movie
               key={movie.id}

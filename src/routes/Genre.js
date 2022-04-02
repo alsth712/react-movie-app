@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Load";
 import Movie from "../components/Movie";
+import styles from "../styles/Home.module.css";
 
 function Genre({ genre }) {
   // state
@@ -24,11 +25,11 @@ function Genre({ genre }) {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
         <Loading />
       ) : (
-        <div className={`${genre} genre`}>
+        <div className={styles.movies}>
           {movies.map((movie) => (
             <Movie
               key={movie.id}
