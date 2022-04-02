@@ -1,0 +1,80 @@
+.eachMovieBox {
+  display: grid;
+  grid-template-columns: minmax(1fr, 200px) 2fr;
+  grid-gap: 20px;
+  background-color: white;
+  margin-bottom: 70px;
+  padding: 20px;
+  border-radius: 5px;
+  color: #adaeb9;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.movie__img {
+  position: static;
+  top: -50px;
+  max-width: 230px;
+  width: 100%;
+  margin-right: 30px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+.movie__title,
+.movie__year,
+.movie__rate {
+  margin: 0;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.movie__title a {
+  margin-bottom: 5px;
+  font-size: 2rem;
+  color: #2c2c2c;
+  text-decoration: none;
+  transition: 0.35s;
+}
+
+.movie__summary {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0px;
+}
+
+.movie__genres {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 80%;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0px;
+}
+
+.movie__genres li,
+.movie__year,
+.movie__rate {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.movie__genres li {
+  display: inline-block;
+}
+
+.movie__title a:hover {
+  /* text-decoration: underline; */
+  /* color: #e50914; */
+  color: rgb(139, 139, 139);
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+    0 4px 0 #282828, 0 5px 0 #262626;
+}
