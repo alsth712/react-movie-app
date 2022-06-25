@@ -16,7 +16,7 @@
 <br/>
 
 <p align="center">
-![soflix](https://user-images.githubusercontent.com/81960250/175765785-744e2624-34f7-4f90-9d43-99449eccbff7.gif)
+<img src="![soflix](https://user-images.githubusercontent.com/81960250/175765785-744e2624-34f7-4f90-9d43-99449eccbff7.gif)" />
 </p>
 
 <br /><br /><br />
