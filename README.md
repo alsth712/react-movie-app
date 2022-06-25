@@ -1,4 +1,6 @@
-<h2 align="middle">🎥 영화 웹 서비스 🎬</h2>
+<br /><br /><br />
+
+<h2 align="middle">🎥 영화 웹 서비스 🎬<br/></h2>
 <br />
 <p align="middle">YTS.mx 에서 제공하는 Movie Database API를 사용하여 영화 정보를 제공하는 영화 웹 서비스입니다.</p>
 <br />
